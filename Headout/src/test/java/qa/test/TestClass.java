@@ -32,6 +32,6 @@ public class TestClass extends HomePage {
 		System.out.println("show page title : " + _eventFiringDriver.getTitle());
 		Assert.assertTrue(_eventFiringDriver.getTitle().equals(showPageTitle));
 		
-		_bookShowPage.bookShow(showName, "April", "29", "Stalls", "J", "7", guestDetails);
+		_bookShowPage.bookShow(showName, "May", "20", "Stalls", "L", "10", guestDetails);
 	}
 }

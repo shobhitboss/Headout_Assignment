@@ -5,6 +5,7 @@ import java.util.Map.Entry;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 import qa.core.BaseClass;
 
@@ -38,6 +39,8 @@ public class BookShowPage extends BaseClass {
 			String seatPath = "//*[contains(@display,'" + sectionType + "')]//*[@class='row'][@display='" + seatRow
 					+ "']//*[@class='seat bookable'][@display='" + seatNum + "']";
 			if (_eventFiringDriver.findElements(By.xpath(seatPath)).size() > 0) {
+				Actions act = new Actions(_eventFiringDriver);
+				act.moveToElement(_eventFiringDriver.findElement(By.xpath(seatPath)));
 				WebElement hallSeat = _eventFiringDriver.findElement(By.xpath(seatPath));
 				hallSeat.click();
 				switchToParentIFrame();
